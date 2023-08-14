@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeldOgLotto", "Loops\HeldOgLotto.csproj", "{2C5CA802-41A7-4D06-BF21-BD6017C643EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasTree", "ChristmasTree\ChristmasTree.csproj", "{0A758658-E9A7-496A-B513-C30B851CDFF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nim", "Nim\Nim.csproj", "{2073C17A-8765-4D62-9E11-F40E0B7750AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C5CA802-41A7-4D06-BF21-BD6017C643EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5CA802-41A7-4D06-BF21-BD6017C643EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5CA802-41A7-4D06-BF21-BD6017C643EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5CA802-41A7-4D06-BF21-BD6017C643EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A758658-E9A7-496A-B513-C30B851CDFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A758658-E9A7-496A-B513-C30B851CDFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A758658-E9A7-496A-B513-C30B851CDFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A758658-E9A7-496A-B513-C30B851CDFF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2073C17A-8765-4D62-9E11-F40E0B7750AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2073C17A-8765-4D62-9E11-F40E0B7750AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2073C17A-8765-4D62-9E11-F40E0B7750AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2073C17A-8765-4D62-9E11-F40E0B7750AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {392D8915-F885-4C4C-8059-C7D0906D82E7}
+	EndGlobalSection
+EndGlobal
