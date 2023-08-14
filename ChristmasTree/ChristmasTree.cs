@@ -1,4 +1,6 @@
-﻿namespace ChristmasTree
+﻿using System.Diagnostics;
+
+namespace ChristmasTree
 {
     internal class ChristmasTree
     {
@@ -7,38 +9,83 @@
 
         static void Main(string[] args)
         {
+            Stopwatch sw = new Stopwatch();
             int rows = 8;
-            
-            for (int i = 0; i < rows; i++)
+            bool redraw = true;
+            bool red = true;
+            sw.Start();
+
+            while (true)
             {
-                int count = MARGIN - i + 1;
-                for (int j = 0; j < count; j++)
+                //we want the tree to blink in alternating colours, but not too fast...
+                if (sw.ElapsedMilliseconds % 1000 == 0)
                 {
-                    Console.Write(" ");
+                    Console.Clear();
+                    redraw = true;
+                    red = !red;
                 }
-                for (int j = 0; j < ROW_LENGTH - (count * 2); j++)
+
+                //when the stop watch have run, redraw the tree
+                if (redraw)
                 {
-                    if (i % 2 == 0)
+                    // draw the tree one row at a time
+                    for (int i = 0; i < rows; i++)
                     {
-                        if (j % 2 == 0)
+                        int count = MARGIN - i + 1;
+                        //we start by drawing the empty space
+                        for (int j = 0; j < count; j++)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(" ");
                         }
-                        else
+                        //then we draw the tree
+                        for (int j = 0; j < ROW_LENGTH - (count * 2); j++)
                         {
-                            Console.ForegroundColor = ConsoleColor.Red;
+                            // first we put a star in the top of the tree
+                            if (i == 1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.Write("*");
+                            }
+                            else if (i % 2 == 0) //if we're on an even row
+                            {
+                                //if we're on an uneven branch, we want to see the tree
+                                if (j % 2 == 0)
+                                {
+                                    // the tree is green
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                }
+                                else
+                                {
+                                    // if we're on an even branch, we want decorations
+                                    if (red)
+                                    {
+                                        // sometimes lights are red
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                    }
+                                    else
+                                    {
+                                        // sometimes the lights are blue
+                                        Console.ForegroundColor = ConsoleColor.Blue;
+                                    }
+                                }
+                                // we draw something to make sure that we can see those pretty colours.
+                                Console.Write("*");
+                            }
+                            else //if we're on an uneven row, but not the first row
+                            {
+                                // we don't want any shinies, just that nice green tree
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write("*");
+                            }
                         }
-                        Console.Write("*");
+                        //go to a new line
+                        Console.WriteLine();
                     }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write("*");
-                    }
+                    //don't redraw the tree!
+                    redraw = false;
                 }
-                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
             }
-            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
