@@ -4,16 +4,17 @@ namespace ChristmasTree
 {
     internal class ChristmasTree
     {
-        const int ROW_LENGTH = 15;
-        const int MARGIN = 7;
-
         static void Main(string[] args)
         {
-            Stopwatch sw = new Stopwatch();
             int rows = 8;
+            int margin = rows -1;
+            int row_length = (rows * 2)-1;
+            Stopwatch sw = new();
             bool redraw = true;
             bool red = true;
             sw.Start();
+
+            //todo: add prompt to set rows.
 
             while (true)
             {
@@ -29,16 +30,16 @@ namespace ChristmasTree
                 if (redraw)
                 {
                     // draw the tree one row at a time
-                    for (int i = 0; i < rows; i++)
+                    for (byte i = 0; i < rows; i++)
                     {
-                        int count = MARGIN - i + 1;
+                        int count = margin - i + 1;
                         //we start by drawing the empty space
-                        for (int j = 0; j < count; j++)
+                        for (byte j = 0; j < count; j++)
                         {
                             Console.Write(" ");
                         }
                         //then we draw the tree
-                        for (int j = 0; j < ROW_LENGTH - (count * 2); j++)
+                        for (byte j = 0; j < row_length - (count * 2); j++)
                         {
                             // first we put a star in the top of the tree
                             if (i == 1)
