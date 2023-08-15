@@ -27,8 +27,9 @@ namespace Nim
                         Console.WriteLine($"Der ligger {matches} tændstikker på bordet");
                         if (player)
                         {
+                            //inform the player of how many matches are left
                             message.Append("Det er din tur, du må tage op til ");
-                            if (matches > 3)
+                            if (matches > 4)
                             {
                                 message.Append('3');
                             }
@@ -38,11 +39,15 @@ namespace Nim
                             }
                             message.Append(" tændstikker!");
                             Console.WriteLine(message.ToString());
+
+                            //take a match a match loop
                             while (true)
                             {
                                 try
                                 {
+                                    //prompt player for a valid number
                                     taken = int.Parse(Console.ReadLine());
+                                    //if number is invalid, throw an exception
                                     if (taken > matches || taken > 3)
                                     {
                                         throw new Exception();
@@ -51,9 +56,12 @@ namespace Nim
                                 }
                                 catch
                                 {
+                                    //if an exception is thrown, prompt the user to try again
                                     Console.WriteLine("Du skal tage et antal tændstikker, prøv igen!");
                                 }
                             }
+
+                            //take the matches
                             matches -= taken;
                             if(matches == 1)
                             {

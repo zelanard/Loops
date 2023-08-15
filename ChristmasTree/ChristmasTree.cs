@@ -32,7 +32,7 @@ namespace ChristmasTree
                     // draw the tree one row at a time
                     for (byte i = 0; i < rows; i++)
                     {
-                        int count = margin - i + 1;
+                        int count = margin - i;
                         //we start by drawing the empty space
                         for (byte j = 0; j < count; j++)
                         {
@@ -42,12 +42,12 @@ namespace ChristmasTree
                         for (byte j = 0; j < row_length - (count * 2); j++)
                         {
                             // first we put a star in the top of the tree
-                            if (i == 1)
+                            if (i == 0)
                             {
                                 Console.ForegroundColor = ConsoleColor.Yellow;
                                 Console.Write("*");
                             }
-                            else if (i % 2 == 0) //if we're on an even row
+                            else if (i % 2 == 1) //if we're on an even row
                             {
                                 //if we're on an uneven branch, we want to see the tree
                                 if (j % 2 == 0)
@@ -85,7 +85,7 @@ namespace ChristmasTree
                     //don't redraw the tree!
                     redraw = false;
                 }
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ResetColor();
             }
         }
     }
